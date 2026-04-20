@@ -217,5 +217,3 @@ Expected: `{"success":true,"data":{"totalOrders":5,"totalRevenue":...}}`
 - **npm** v9+ (included with Node.js)
 - A modern browser (Chrome / Firefox recommended for DevTools)
 - Ports **3000** and **5173** must be free
-
--
