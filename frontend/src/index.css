@@ -1,0 +1,107 @@
+/* ═══════════════════════════════════════════════════════
+   SAP O2C Dashboard — Global Styles
+   Design: Industrial/Utilitarian with SAP Blue accents
+   Fonts: IBM Plex Sans + IBM Plex Mono
+════════════════════════════════════════════════════════ */
+
+:root {
+  /* SAP Brand Palette */
+  --sap-blue: #0070f2;
+  --sap-blue-dark: #0040b0;
+  --sap-blue-light: #e8f2ff;
+  --sap-blue-mid: #c0dbff;
+
+  /* Neutrals */
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-card: #1c2230;
+  --bg-card-hover: #212840;
+  --border: #2a3548;
+  --border-light: #334060;
+
+  /* Text */
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted: #4d5566;
+  --text-accent: #58a6ff;
+
+  /* Status Colors */
+  --status-pending: #f0a500;
+  --status-pending-bg: rgba(240, 165, 0, 0.12);
+  --status-confirmed: #3fb950;
+  --status-confirmed-bg: rgba(63, 185, 80, 0.12);
+  --status-delivery: #a371f7;
+  --status-delivery-bg: rgba(163, 113, 247, 0.12);
+  --status-shipped: #58a6ff;
+  --status-shipped-bg: rgba(88, 166, 255, 0.12);
+  --status-invoiced: #ff7b72;
+  --status-invoiced-bg: rgba(255, 123, 114, 0.12);
+  --status-delivered: #3fb950;
+  --status-delivered-bg: rgba(63, 185, 80, 0.12);
+
+  /* Spacing */
+  --radius: 8px;
+  --radius-lg: 12px;
+
+  /* Typography */
+  --font-sans: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 14px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Grid noise texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,112,242,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,112,242,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root { position: relative; z-index: 1; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--sap-blue); }
+
+/* ── Animations ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.fade-in { animation: fadeInUp 0.4s ease forwards; }
+.slide-in { animation: slideIn 0.3s ease forwards; }
+
+/* ── Utility ── */
+.mono { font-family: var(--font-mono); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
