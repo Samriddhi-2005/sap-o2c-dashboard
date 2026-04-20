@@ -1,1 +1,14 @@
 /docs
+# Ignore Node.js dependencies (if you are using React, Angular, Express, etc.)
+node_modules/
+
+# Ignore Python virtual environments and caches (if using Python for your backend)
+venv/
+env/
+__pycache__/
+
+# Ignore environment variables (NEVER upload secret API keys or database passwords)
+.env
+
+# Ignore OS-generated files
+.DS_Store
