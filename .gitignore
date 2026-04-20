@@ -1,4 +1,3 @@
-/docs
 # Ignore Node.js dependencies (if you are using React, Angular, Express, etc.)
 node_modules/
 
